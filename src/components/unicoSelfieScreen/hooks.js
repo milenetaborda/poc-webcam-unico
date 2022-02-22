@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useWindowSize } from '../../utils/useWindowSize'
 import { unicoConfig, unicoLayout } from './constants.js'
 
@@ -52,6 +52,7 @@ export const useUnicoSelfie = (closeModal) => {
 
   useEffect(() => {
     typeof window !== undefined && initUnico()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return {
