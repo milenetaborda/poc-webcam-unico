@@ -19,8 +19,6 @@ function App() {
 
   const closeModal = () => {
     modalRef?.current?.closeModalFn();
-    setGuarantor(geradorNome());
-    setStudent(geradorNome());
   };
 
   return (
