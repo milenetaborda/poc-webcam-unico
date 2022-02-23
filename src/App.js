@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { closeCamera } from "unico-webframe"
 import { geradorNome } from "gerador-nome";
 import UnicoSelfieScreen from "./components/unicoSelfieScreen";
@@ -21,10 +21,10 @@ function App() {
     setStudent(geradorNome());
   };
 
-  const closeModal = useCallback(() => {
-    closeCamera()
+  const closeModal = () => {
     modalRef?.current?.closeModalFn();
-  }, [closeCamera]);
+    closeCamera()
+  };
 
   return (
     <div className="App">

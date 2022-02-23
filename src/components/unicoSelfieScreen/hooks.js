@@ -32,7 +32,7 @@ export const useUnicoSelfie = (closeModal) => {
         },
         error: function(err) {
           console.error(err)
-          toast(err.message)
+          toast.error(err.message)
           if(err.code === 105 || err.code === 102 || err.code === 103 || err.code === 104 || err.code === 106) {
             initUnico()
           }
