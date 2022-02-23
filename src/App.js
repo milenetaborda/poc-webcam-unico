@@ -1,10 +1,13 @@
+import { useCallback, useRef, useState } from "react";
 import { closeCamera } from "unico-webframe"
 import { geradorNome } from "gerador-nome";
-import { useRef, useState } from "react";
-import Modal from "./components/Modal";
 import UnicoSelfieScreen from "./components/unicoSelfieScreen";
-import { PicturePhoto } from "./assets/picturePhoto";
 import { ButtonCloseModal } from "./assets/buttonCloseModal";
+import { PicturePhoto } from "./assets/picturePhoto";
+import { ToastContainer } from 'react-toastify';
+import Modal from "./components/Modal";
+
+import 'react-toastify/dist/ReactToastify.css';
 import "./App.css";
 
 function App() {
@@ -18,10 +21,10 @@ function App() {
     setStudent(geradorNome());
   };
 
-  const closeModal = () => {
-    modalRef?.current?.closeModalFn();
+  const closeModal = useCallback(() => {
     closeCamera()
-  };
+    modalRef?.current?.closeModalFn();
+  }, [closeCamera]);
 
   return (
     <div className="App">
@@ -47,6 +50,8 @@ function App() {
           student={student}
         />
       </Modal>
+
+      <ToastContainer position="bottom-right" className="App-toast" />
     </div>
   );
 }

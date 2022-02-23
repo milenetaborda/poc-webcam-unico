@@ -2,6 +2,7 @@ import * as acessoWebFrame from "unico-webframe"
 import { useEffect, useState } from 'react'
 import { useWindowSize } from '../../utils/useWindowSize'
 import { unicoConfig, unicoLayout } from './constants.js'
+import { toast } from 'react-toastify';
 
 export const useUnicoSelfie = (closeModal) => {
   const [videoConstraints, setVideoContraints] = useState({})
@@ -31,6 +32,10 @@ export const useUnicoSelfie = (closeModal) => {
         },
         error: function(err) {
           console.error(err)
+          toast(err.message)
+          if(err.code === 105 || err.code === 102 || err.code === 103 || err.code === 104 || err.code === 106) {
+            initUnico()
+          }
         },
         support: function(err) {
           console.log(err)
