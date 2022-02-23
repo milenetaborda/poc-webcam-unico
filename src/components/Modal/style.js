@@ -32,4 +32,14 @@ export const ModalContainer = styled.div`
   width: ${({ width }) => width || '600px'};
   background-color: ${({ bgColor }) => bgColor || 'white'};
   border-radius: ${({ borderRadius }) => borderRadius || '8px'};
+
+  @media (max-width: 610px) {
+    max-width: calc(100% - 0px);
+    max-height: calc(100vh - 0px); 
+    padding: 0;
+    width: 100%;
+    align-items: center;
+    height: 100%;
+    position: fixed;
+  }
 `

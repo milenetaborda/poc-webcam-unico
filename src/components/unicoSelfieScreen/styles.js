@@ -35,10 +35,12 @@ export const Container = styled.div`
     }
   }
 
-  @media (max-width: 602px) {
+  @media (max-width: 610px) {
+    margin-top: 0;
+
     .container {
       > span {
-        bottom: 25%;
+        bottom: 10%;
       }
     }
   }

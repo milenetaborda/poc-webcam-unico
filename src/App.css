@@ -46,6 +46,12 @@
   display: flex;
 }
 
+@media (max-width: 610px) {
+  .App-title-modal-content {
+    display: none;
+  }
+}
+
 .App-close {
   margin-left: auto;
   background: transparent;
