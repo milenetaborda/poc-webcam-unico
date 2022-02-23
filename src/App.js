@@ -1,3 +1,4 @@
+import { closeCamera } from "unico-webframe"
 import { geradorNome } from "gerador-nome";
 import { useRef, useState } from "react";
 import Modal from "./components/Modal";
@@ -19,6 +20,7 @@ function App() {
 
   const closeModal = () => {
     modalRef?.current?.closeModalFn();
+    closeCamera()
   };
 
   return (

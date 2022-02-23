@@ -1,3 +1,4 @@
+import * as acessoWebFrame from "unico-webframe"
 import { useEffect, useState } from 'react'
 import { useWindowSize } from '../../utils/useWindowSize'
 import { unicoConfig, unicoLayout } from './constants.js'
@@ -22,8 +23,6 @@ export const useUnicoSelfie = (closeModal) => {
   }, [width])
 
   const initUnico = async () => {
-    const acessoWebFrame = await import('./unico.js')
-
     var callback = {
       on: {
         success: function(obj) {
