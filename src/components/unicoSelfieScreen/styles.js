@@ -42,6 +42,10 @@ export const Container = styled.div`
       > span {
         bottom: 10%;
       }
+
+      #box-camera {
+        border-radius: 0;
+      }
     }
   }
 `;
