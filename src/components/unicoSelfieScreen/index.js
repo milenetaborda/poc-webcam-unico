@@ -9,7 +9,7 @@ const UnicoSelfieScreen = ({ closeModal, guarantor, student }) => {
     <S.Container>
       <div className="container">
         <div id="box-camera"></div>
-        <span>Sou, {guarantor} avalista de {student} na Provi</span>
+        <span>Sou {guarantor}, avalista de {student} na Provi</span>
       </div>
     </S.Container>
   );
